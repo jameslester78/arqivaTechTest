@@ -33,6 +33,13 @@ You will need admin priviledges as you will be running code to create a database
 
 You may also want to have set up inbound rules to enable you to query the database locally
 
+#### SQL Server JDBC driver
+
+https://www.microsoft.com/en-us/download/details.aspx?id=54671
+
+- place sqljdbc42.jar in %spark_home% jar folder
+- restart spark
+- check environment tab in spark ui for jar, look in the classpath section
 
 # Run The Code
 
