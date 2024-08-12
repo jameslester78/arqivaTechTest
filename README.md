@@ -35,6 +35,8 @@ You may also want to have set up inbound rules to enable you to query the databa
 
 #### SQL Server JDBC driver
 
+To install the JDBC driver
+
 https://www.microsoft.com/en-us/download/details.aspx?id=54671
 
 - place sqljdbc42.jar in %spark_home% jar folder
