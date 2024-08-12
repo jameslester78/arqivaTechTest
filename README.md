@@ -71,3 +71,9 @@ When ready repeat the process for the files contained in fileset2 and again in f
 
 A demo of the code being run as well as a look at the outputs can be found here:
 https://youtu.be/0erdFqDuSZY
+
+# Files
+
+- rdsCreate.sql - a t-sql script that will create sql server rds database, login, user and database tables
+- submission.ipynb - a Jupyter notebook containg the code that will do the import, cleaning, processing, storing of data
+- fileset - a directory containing 3 sets of 2 files which can be used to demonstrate the code
