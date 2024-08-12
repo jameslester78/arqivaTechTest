@@ -3,10 +3,10 @@
 You Will Need:
 
 - An AWS Account
-- A S3 bucket with read and write permissions
+- A S3 bucket which you can read and write to
 - A SQL Server RDS with admin permissions
 - Spark installed locally
-- Jupyter Installation
+- A Local Jupyter Installation
 - SQL Management Studio or other tool to query SQL Server
 
 The Following Python Libraries
@@ -52,7 +52,7 @@ Run the first cell to import findspark and set up your Spark session
 
 Set your parameters in the third cell and run it
 
-The fourth cell contains the functions that you will need, run it#
+The fourth cell contains the functions that you will need, run it
 
 The fifth and final cell conatins the code that will process the data, when ready - run it
 
