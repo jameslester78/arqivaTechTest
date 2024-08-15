@@ -1,0 +1,60 @@
+CREATE THE FOLLOWING SECRET AND KEYS, VALUES WILL BE AS SPECIFIED WHEN SETTING UP THE RDS IN rdsCreate.sql script
+
+SECRET NAME : rdsCredentials
+sECRET KEY: rdsUser
+SECRET KEY: rdsPass
+
+
+CREATE THE FOLLOWING TWO POLICES
+
+POLICY NAME : AccessRDSSecret
+UPDATE RESOURCE WITH YOUR SECRET ARN
+
+
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Action": [
+                "secretsmanager:DescribeSecret",
+                "secretsmanager:List*",
+                "secretsmanager:Get*"
+            ],
+            "Effect": "Allow",
+            "Resource": [
+                "arn:aws:secretsmanager:eu-north-1:025066257600:secret:rdsCredentials-ARLpgI"
+            ]
+        }
+    ]
+}
+
+
+
+POLICY NAME : single-bucket-access
+UPDATE RESOURCE WITH YOUR BUCKET ARN
+
+
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor1",
+            "Effect": "Allow",
+            "Action": [
+                "s3:PutObject",
+                "s3:ListBucket",
+                "s3:GetObject",
+                "s3:DeleteObject"
+            ],
+            "Resource": "arn:aws:s3:::jameslester78-files*"
+        }
+    ]
+}
+
+
+CREATE GROUP WITH POLICIES LISTED ABOVE ATTACHED
+
+CREATE A USER IN ABOVE GROUP NOTE THE ACCESS KEY ID AND SECRET ACCESS KEY
+
+CREATE ENVIRONMENT VARIABLE "awsAccessKeyID" and "awsSecretAccessKey" CONTAINING ABOVE ACCESS KEY ID AND SECRET ACCESS KEY
+
