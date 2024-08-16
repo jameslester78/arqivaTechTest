@@ -66,7 +66,7 @@ GO
 
 CREATE TABLE [dbo].[transactions](
 	[id] [int] IDENTITY(1,1) NOT NULL,
-	[userFk] [int] NULL,
+	[usersPK] [int] NULL,
 	[transaction_id] [int] NOT NULL,
 	[user_id] [int] NULL,
 	[amount] [decimal](10, 2) NULL,
@@ -83,7 +83,7 @@ GO
 ALTER TABLE [dbo].[transactions] ADD  CONSTRAINT [DF_txns_dateFrom]  DEFAULT (getdate()) FOR [StartDate]
 GO
 
-ALTER TABLE [dbo].[transactions]  WITH CHECK ADD  CONSTRAINT [FK_transactions_users] FOREIGN KEY([userFk])
+ALTER TABLE [dbo].[transactions]  WITH CHECK ADD  CONSTRAINT [FK_transactions_users] FOREIGN KEY([usersPK])
 REFERENCES [dbo].[users] ([id])
 GO
 
